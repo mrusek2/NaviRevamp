@@ -47,9 +47,9 @@ window.onload = ()=>{
 	document.getElementById('menuButton').addEventListener('click', toggleMenuBar)
 
 	//Add an event listener to the contentWrapper as well
-	//for mobile - if we click on the contentWrapper we want the menu to 
+	//for mobile - if we click on the contentWrapper we want the menu to
 	//disappear, etc.
-	document.getElementById('contentWrapperInner').addEventListener('click', hideMenuBar)
+	document.getElementById('contentWrapperInner').addEventListener('click', ()=>{if(document.body.clientWidth < 768) hideMenuBar()})
 
 	//Add an event listener on resize event
 	window.addEventListener('resize', handleWindowResize)
