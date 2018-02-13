@@ -1,0 +1,99 @@
+#siteWrapper{
+	display: flex;
+	flex-flow: row nowrap;
+	width: 100vw;
+	height: 100vh;
+}
+
+#menu{
+	display: block;
+	height: 100vh;
+	background-color: #333333;
+	position: absolute;
+	z-index: 20;
+	top: 0px;
+	left: 0px;
+	transition: all 0.5s;
+}
+
+.visibleMenu{
+	width: 80vw;
+}
+
+.invisibleMenu{
+	width: 0px;
+}
+
+#contentWrapper{
+	display: flex;
+	flex-flow: row wrap;
+	width: 100vw;
+	height: 100vh;
+	background-color: #888888;
+}
+
+#logoBar{
+	display: block;
+	width: 100%;
+	height: 45px;
+	background-color: #CCCCCC;
+}
+
+#menuButton{
+	width: 40px;
+	height: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-left: 10px;
+}
+
+#contentWrapperInner{
+	display: flex;
+	flex-flow: row wrap;
+	width: 100%;
+	min-height: calc(100vh - 45px);
+	max-height: calc(100vh - 45px);
+	overflow-y: auto;
+}
+
+#content{
+	min-height: calc(100% - 105px);
+}
+
+#copyright{
+	display: block;
+	width: 100%;
+	height: 65px;
+	background-color: #CCCCCC;
+	align-self: flex-end;
+}
+
+.widget{
+	background-color: #999999;
+	border-color: #CCCCCC;
+	height:300px;
+}
+
+@media (min-width: 768px){
+	#menu{
+		position: relative;
+	}
+
+	.visibleMenu{
+		width: 20vw;
+	}
+
+	#contentWrapper{
+		width: 100%;
+	}
+
+	#logoBar{
+		height: 65px;
+	}
+
+	#contentWrapperInner{
+		max-height: calc(100vh - 65px);
+		min-height: calc(100vh - 65px);
+	}
+
+}

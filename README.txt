@@ -1,0 +1,1 @@
+Small admin dashboard template.
