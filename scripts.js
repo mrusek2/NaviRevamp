@@ -42,6 +42,42 @@ function handleWindowResize(){
 	}
 }
 
+//Returns all filters
+function GetFilters(){
+		let allFilters = [
+			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
+			{"name":"Effectiveness Profile", "id":"EEF", "cuts":[{"id":"904", "name":"Least effective"}, {"id":"901", "name":"Most Effective"}, {"id":"903", "name":"Frustrated"}, {"id":"902", "name":"Detached"}, {"id":"905", "name":"N/A"}]},
+			{"name":"Some Long demo", "id":"LongDemo", "cuts":[{"id":"904", "name":"Least effective"}, {"id":"901", "name":"Most Effective"},
+																										{"id":"903", "name":"Frustrated"}, {"id":"902", "name":"Detached"},
+																										{"id":"905", "name":"N/A"}, {"id":"904", "name":"Least effective"},
+																										{"id":"901", "name":"Most Effective"}, {"id":"903", "name":"Frustrated"},
+																										{"id":"902", "name":"Detached"}, {"id":"905", "name":"N/A"}]},
+		]
+
+		for(let filter of allFilters){
+			let clickFilterFunction = (cutToBeClicked) =>{
+				//Check if this filter contains such cut
+				let contains = false
+				for(let cut of filter.cuts){
+						if(cut.id === cutToBeClicked){
+							contains = true
+							break
+						}
+				}
+
+				//Moves forward the click user did
+				if(contains)
+					console.log(`Clicked ${cutToBeClicked} in ${filter.id}`)
+				else
+					throw(`Cut ${cutToBeClicked} doesn't exist in demography ${filter.id}`)
+			}
+
+			filter.clickCut = clickFilterFunction
+		}
+
+		return allFilters
+}
+
 window.onload = ()=>{
 	//Add an event listener on show/hide menu button
 	document.getElementById('menuButton').addEventListener('click', toggleMenuBar)
@@ -56,4 +92,13 @@ window.onload = ()=>{
 
 	//Handle the "resize" at the very beggining
 	handleWindowResize()
+
+	//Example GetFilters() usage:
+	//Get filters
+	let filters = GetFilters()
+	//Set up some divs with them, etc. with event handlers
+	//Click the cuts (you want to use this callback when user clicks the buttons)
+	filters[0].clickCut('420')
+	filters[1].clickCut('904')
+	filters[2].clickCut('420')
 }
