@@ -106,7 +106,7 @@ function GetFilters(){
 				filterGroup.append(filterName)
 				filterName.append(filter.name)
 				let filterList = document.createElement('div')
-				filterName.className = "filterList"
+				filterList.className = "filterList"
 				filterGroup.append(filterList)
 				for(let cut of filter.cuts){
 					let item = document.createElement('div');
@@ -116,7 +116,6 @@ function GetFilters(){
 					item.addEventListener("click" , ()=>{filter.clickCut(cut.id);})
 				}
 			}
-			filtersBlock.append(`</div>`)
 		}
 
 //Returns all EEF Details demos

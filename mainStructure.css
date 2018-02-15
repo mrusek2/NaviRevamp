@@ -109,7 +109,24 @@
 }
 .filterCut{
 	float:left;
+	Background:red;
+	padding:10px 5px;
 }
+.filterCut:first-child{
+	background:blue;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+.filterCut:last-child{
+	background: green;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius:8px;
+}
+.filterCut:hover{
+	background:yellow;
+}
+
+
 
 
 
