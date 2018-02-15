@@ -32,7 +32,7 @@ function toggleMenuBar(){
 		showMenuBar()
 	}
 }
-
+//toggle Filters
 function toggleFilters(){
 	//Get the filters div
 	let filters = document.getElementById('filters')
@@ -96,25 +96,38 @@ function GetFilters(){
 
 	//generates filters
 	function generateFilters(filters){
+		//Find the Filters block.
 		let filtersBlock = document.getElementById('filters')
+
+		//generating blocks with DEMOS and FILTERS
 		for(let filter of filters){
+				//Generating a Filter group and adding it to the site
 				let filterGroup = document.createElement('div')
 				filtersBlock.append(filterGroup);
 				filterGroup.className="filterGroup"
+
+				//Generating a name of the DEMO above its FILTERS
 				let filterName = document.createElement('div')
 				filterName.className = "filterName"
 				filterGroup.append(filterName)
 				filterName.append(filter.name)
+
+				//Generating a block in which FILTERS will be!
 				let filterList = document.createElement('div')
 				filterList.className = "filterList"
 				filterGroup.append(filterList)
+
+				//adding FILTERS to filterList
 				for(let cut of filter.cuts){
 					let item = document.createElement('div');
 					item.className = "filterCut";
 					filterList.append(item);
 					item.append(cut.name);
+
+					//adding event listener for clickCut FUNCTION
 					item.addEventListener("click" , ()=>{filter.clickCut(cut.id);})
 				}
+
 			}
 		}
 
