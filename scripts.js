@@ -69,13 +69,23 @@ function GetFilters(){
 				if(contains)
 					console.log(`Clicked ${cutToBeClicked} in ${filter.id}`)
 				else
-					throw(`Cut ${cutToBeClicked} doesn't exist in demography ${filter.id}`)
+					//throw(`Cut ${cutToBeClicked} doesn't exist in demography ${filter.id
+					console.error(`Cut ${cutToBeClicked} doesn't exist in demography ${filter.id}`)
 			}
 
 			filter.clickCut = clickFilterFunction
 		}
 
 		return allFilters
+}
+
+//Returns all EEF Details demos
+function GetEEFDetails(){
+		let cuts = [
+			{"id":"420", "name":"Male", "scores": {"901":"55%", "902":"15%", "903":"20%", "904":"10%"}},
+			{"id":"410", "name":"Female", "scores": {"901":"-", "902":"-", "903":"-", "904":"-"}}
+		];
+		return cuts
 }
 
 window.onload = ()=>{
@@ -101,4 +111,13 @@ window.onload = ()=>{
 	filters[0].clickCut('420')
 	filters[1].clickCut('904')
 	filters[2].clickCut('420')
+
+	//Example GetEEFDetails() usage
+	let eefData = GetEEFDetails()
+	for(let cut of eefData){
+		//Create the HTML markup for this particular cut
+		//Based on cut.id, cut.name and cut.scores{}
+		console.log(cut.scores)
+	}
+
 }
