@@ -33,6 +33,21 @@ function toggleMenuBar(){
 	}
 }
 
+function toggleFilters(){
+	//Get the filters div
+	let filters = document.getElementById('filters')
+
+	//Check if it's visible
+	let isVisible = filters.className === 'visibleFilters'
+	//Toggle it
+	if(isVisible){
+		filters.className = 'hiddenFilters'
+	}
+	else{
+		filters.className = 'visibleFilters'
+	}
+}
+
 //Handles various resizing operations
 function handleWindowResize(){
 	//Hide the menubar if we hit <768px
@@ -48,10 +63,10 @@ function GetFilters(){
 			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
 			{"name":"Effectiveness Profile", "id":"EEF", "cuts":[{"id":"904", "name":"Least effective"}, {"id":"901", "name":"Most Effective"}, {"id":"903", "name":"Frustrated"}, {"id":"902", "name":"Detached"}, {"id":"905", "name":"N/A"}]},
 			{"name":"Some Long demo", "id":"LongDemo", "cuts":[{"id":"904", "name":"Least effective"}, {"id":"901", "name":"Most Effective"},
-																										{"id":"903", "name":"Frustrated"}, {"id":"902", "name":"Detached"},
-																										{"id":"905", "name":"N/A"}, {"id":"904", "name":"Least effective"},
-																										{"id":"901", "name":"Most Effective"}, {"id":"903", "name":"Frustrated"},
-																										{"id":"902", "name":"Detached"}, {"id":"905", "name":"N/A"}]},
+																												 {"id":"903", "name":"Frustrated"}, {"id":"902", "name":"Detached"},
+																												 {"id":"905", "name":"N/A"}, {"id":"904", "name":"Least effective"},
+																												 {"id":"901", "name":"Most Effective"}, {"id":"903", "name":"Frustrated"},
+																												 {"id":"902", "name":"Detached"}, {"id":"905", "name":"N/A"}]},
 		]
 
 		for(let filter of allFilters){
@@ -77,7 +92,32 @@ function GetFilters(){
 		}
 
 		return allFilters
-}
+	}
+
+	//generates filters
+	function generateFilters(filters){
+		let filtersBlock = document.getElementById('filters')
+		for(let filter of filters){
+				let filterGroup = document.createElement('div')
+				filtersBlock.append(filterGroup);
+				filterGroup.className="filterGroup"
+				let filterName = document.createElement('div')
+				filterName.className = "filterName"
+				filterGroup.append(filterName)
+				filterName.append(filter.name)
+				let filterList = document.createElement('div')
+				filterName.className = "filterList"
+				filterGroup.append(filterList)
+				for(let cut of filter.cuts){
+					let item = document.createElement('div');
+					item.className = "filterCut";
+					filterList.append(item);
+					item.append(cut.name);
+					item.addEventListener("click" , ()=>{filter.clickCut(cut.id);})
+				}
+			}
+			filtersBlock.append(`</div>`)
+		}
 
 //Returns all EEF Details demos
 function GetEEFDetails(){
@@ -92,6 +132,8 @@ window.onload = ()=>{
 	//Add an event listener on show/hide menu button
 	document.getElementById('menuButton').addEventListener('click', toggleMenuBar)
 
+	//add an event listener on show/hide filters button
+	document.getElementById('filtersButton').addEventListener('click', toggleFilters)
 	//Add an event listener to the contentWrapper as well
 	//for mobile - if we click on the contentWrapper we want the menu to
 	//disappear, etc.
@@ -107,6 +149,8 @@ window.onload = ()=>{
 	//Get filters
 	let filters = GetFilters()
 	//Set up some divs with them, etc. with event handlers
+	generateFilters(filters)
+
 	//Click the cuts (you want to use this callback when user clicks the buttons)
 	filters[0].clickCut('420')
 	filters[1].clickCut('904')
