@@ -88,6 +88,14 @@ function GetEEFDetails(){
 		return cuts
 }
 
+//Table handler - freeze table header and first column while scrolling.
+function tableHandler(){
+	let head = document.getElementById("tableHead")
+	let body = document.getElementById("tableBody")
+
+}
+
+
 window.onload = ()=>{
 	//Add an event listener on show/hide menu button
 	document.getElementById('menuButton').addEventListener('click', toggleMenuBar)
@@ -120,4 +128,6 @@ window.onload = ()=>{
 		console.log(cut.scores)
 	}
 
+	//Handler the fixed header and first column of the table
+	tableHandler()
 }
