@@ -27,12 +27,26 @@ function toggleMenuBar(){
 	//Toggle it
 	if(isVisible){
 		hideMenuBar()
-
+		widerHeader()
 	}
 	else{
 		showMenuBar()
-
+		thinnerHeader()
 	}
+}
+
+function widerHeader(){
+	let head = document.getElementById("tableHead")
+
+	/*head.style.width = "calc(100vw - 86px)"
+	head.style.transition = "0.7s"*/
+}
+
+function thinnerHeader(){
+	let head = document.getElementById("tableHead")
+
+	/*head.style.width = "calc(100vw - 353px)"
+	head.style.transition = "0.4s"*/
 }
 
 
@@ -93,9 +107,9 @@ function GetEEFDetails(){
 
 //Table handler - freeze table header and first column while scrolling.
 function tableHandler(){
-	let head = document.getElementById("tableHead")
-	let body = document.getElementById("tableBody")
+	/*let head = document.getElementById("tableHead")
 
+	head.style.width = "calc(100vw - 353px)"*/
 }
 
 
