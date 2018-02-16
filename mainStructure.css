@@ -6,22 +6,18 @@
 }
 
 #tableHead{
-	width: 100%;
+	display: table;
 	background-color: #999999;
-	/*border-top: 1px solid white;*/
 	position: absolute;
-	top: 8px;
-	left: 9px;
+	top: 0px;
+	left: 0px;
+	z-index: auto;
 }
 
-#fakeHeader{
-	width: 100%;
-	background-color: #999999;
-	height: 100px;
-}
-
-.t0_dc{
-	max-width: 250px;
+#tbody1{
+	overflow:auto;
+	display:block;
+	max-height:54vh;
 }
 
 #menu{
@@ -95,7 +91,6 @@
 
 .tableWrapper{
 	max-height: 70vh;
-	overflow:auto;
 }
 
 .table thead{
