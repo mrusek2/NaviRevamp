@@ -71,13 +71,12 @@
 }
 
 /*Filters START*/
-
-
-
-#contentWrapperInner{/*needed for absolute positions to work*/
+body{
 	position:relative;
-	top:0;
-	left:0;
+}
+
+#siteWrapper, #contentWrapper, #contentWrapperInner,#content{/*needed for absolute positions to work*/
+	position:relative;
 }
 
 
@@ -108,6 +107,24 @@
 	overflow: hidden;
 }
 .filterGroup{
+	display: inline-block;
+}
+
+.filtersSubmitBlock{
+	position:absolute;
+	right:0;
+	bottom:0;
+	width:100%;
+	height:5vh;
+}
+.filtersSubmit{
+	float:right;
+	margin-right:2vw;
+	padding:5px 10px;
+	background:blue;
+	color:white;
+	cursor:pointer;
+	border-radius:8px;
 
 }
 
@@ -115,7 +132,7 @@
 	min-width:0px;
 	border-radius: 8px;
 	border:1px solid black;
-	display: inline-block;
+
 	Background:red;
 
 }
@@ -140,14 +157,61 @@
 	border-bottom-right-radius: 8px;
 }
 
-.active{
-	background:orange;
+.filterCut:hover{
+	background:yellow;
+}
+
+
+/*colopsible*/
+
+.filterMenu{
+	position:relative;
+}
+
+.filterMenuName , .filterMenuList{
+	float:left;
+}
+.filterMenuName{
+	Background:red;
+	padding:10px 5px;
+	border-radius: 8px;
+}
+.filterMenuList{
+	height:0;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index: 1;
+	overflow:hidden;
+	transition:2s;
+}
+.filterMenuListActive{
+	height:50vh;
+	overflow:auto;
+}
+.filterMenuCut{
+	Background:red;
+	padding:10px 5px;
+}
+.filterMenuCut:first-child{
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+}
+.filterMenuCut:last-child{
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
 }
 
 .filterCut:hover{
 	background:yellow;
 }
 
+
+/*colapsible END*/
+
+.active{
+	background:orange;
+}
 
 /*Filters END*/
 

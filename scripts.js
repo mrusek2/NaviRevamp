@@ -67,6 +67,24 @@ function GetFilters(){
 																												 {"id":"905", "name":"N/A"}, {"id":"904", "name":"Least effective"},
 																												 {"id":"901", "name":"Most Effective"}, {"id":"903", "name":"Frustrated"},
 																												 {"id":"902", "name":"Detached"}, {"id":"905", "name":"N/A"}]},
+			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
+			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
+			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
+			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
+			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
+			{"name":"Effectiveness Profile", "id":"EEF", "cuts":[{"id":"904", "name":"Least effective"}, {"id":"901", "name":"Most Effective"}, {"id":"903", "name":"Frustrated"}, {"id":"902", "name":"Detached"}, {"id":"905", "name":"N/A"}]},
+			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
+			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
+			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
+			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
+			{"name":"Effectiveness Profile", "id":"EEF", "cuts":[{"id":"904", "name":"Least effective"}, {"id":"901", "name":"Most Effective"}, {"id":"903", "name":"Frustrated"}, {"id":"902", "name":"Detached"}, {"id":"905", "name":"N/A"}]},
+			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
+			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
+			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
+			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
+
+
+
 		]
 
 		for(let filter of allFilters){
@@ -105,40 +123,101 @@ function GetFilters(){
 				let filterGroup = document.createElement('div')
 				filtersBlock.append(filterGroup);
 				filterGroup.className="filterGroup"
+				if(filter.cuts.length<=5){//generating small demographics
+					//Generating a name of the DEMO above its FILTERS
+					let filterName = document.createElement('div')
+					filterName.className = "filterName"
+					filterGroup.append(filterName)
+					filterName.append(filter.name)
 
-				//Generating a name of the DEMO above its FILTERS
-				let filterName = document.createElement('div')
-				filterName.className = "filterName"
-				filterGroup.append(filterName)
-				filterName.append(filter.name)
+					//Generating a block in which FILTERS will be!
+					let filterList = document.createElement('div')
+					filterList.className = "filterList"
+					filterGroup.append(filterList)
 
-				//Generating a block in which FILTERS will be!
-				let filterList = document.createElement('div')
-				filterList.className = "filterList"
-				filterGroup.append(filterList)
+					//adding FILTERS to filterList
+					for(let cut of filter.cuts){
+						let item = document.createElement('div');
+						item.className = "filterCut";
+						filterList.append(item);
+						item.append(cut.name)
 
-				//adding FILTERS to filterList
-				for(let cut of filter.cuts){
-					let item = document.createElement('div');
-					item.className = "filterCut";
-					filterList.append(item);
-					item.append(cut.name
+						//adding event listener for clickCut FUNCTION
+						item.addEventListener("click" , ()=>{
+							filter.clickCut(cut.id);
+							//togle active filter
+							if(item.className.includes("active")){
+								item.className = "filterCut";
+							}
+							else{
+								item.className += " active";
+							}
+						})
+					}
+				}
+				else{//generating huge demographics
 
-					//adding event listener for clickCut FUNCTION
-					item.addEventListener("click" , ()=>{
-						filter.clickCut(cut.id);
-						//togle active filter
-						if(item.className.includes("active")){
-							item.className = "filterCut";
+					//generate colapse able menu
+					let filterMenu = document.createElement("div");
+					filterMenu.className = "filterMenu";
+					filterGroup.append(filterMenu);
+
+					let filterName = document.createElement('div')
+					filterName.className = "filterMenuName"
+					filterMenu.append(filterName)
+					filterName.append(filter.name)
+
+
+					//Generating a block in which FILTERS will be!
+					let filterList = document.createElement('div')
+					filterList.className = "filterMenuList"
+					filterMenu.append(filterList)
+
+					//attatching event listener to show filters after click
+					filterName.addEventListener("click", ()=>{
+						if(filterList.className.includes("filterMenuListActive")){
+							filterList.className = "filterMenuList"
 						}
 						else{
-							item.className += " active";
+							filterList.className += " filterMenuListActive";
 						}
-					})
+					});
+
+					//adding FILTERS to filterList
+					for(let cut of filter.cuts){
+						let item = document.createElement('div');
+						item.className = "filterMenuCut";
+						filterList.append(item);
+						item.append(cut.name)
+
+						//adding event listener for clickCut FUNCTION
+						item.addEventListener("click" , ()=>{
+							filter.clickCut(cut.id);
+							//togle active filter
+							if(item.className.includes("active")){
+								item.className = "filterMenuCut";
+							}
+							else{
+								item.className += " active";
+							}
+						})
+					}
+
 				}
 			}
 
-			
+			let submitBlock = document.createElement("div");
+			submitBlock.className = "filtersSubmitBlock"
+			filtersBlock.append(submitBlock);
+
+			let submit = document.createElement("div");
+			submit.className = "filtersSubmit"
+			submitBlock.append(submit);
+			submit.append("Apply")
+
+			submit.addEventListener("click",()=>{
+				toggleFilters();
+			})
 
 		}
 
