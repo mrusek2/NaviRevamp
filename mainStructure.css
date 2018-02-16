@@ -70,7 +70,10 @@
 	align-self: flex-end;
 }
 
-/*Filters*/
+/*Filters START*/
+
+
+
 #contentWrapperInner{/*needed for absolute positions to work*/
 	position:relative;
 	top:0;
@@ -105,32 +108,48 @@
 	overflow: hidden;
 }
 .filterGroup{
-	clear:both;
+
 }
+
+.filterList{
+	min-width:0px;
+	border-radius: 8px;
+	border:1px solid black;
+	display: inline-block;
+	Background:red;
+
+}
+.filterList::after {
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
+}
+
 .filterCut{
 	float:left;
 	Background:red;
 	padding:10px 5px;
 }
 .filterCut:first-child{
-	background:blue;
 	border-top-left-radius: 8px;
 	border-bottom-left-radius: 8px;
 }
 .filterCut:last-child{
-	background: green;
 	border-top-right-radius: 8px;
-	border-bottom-right-radius:8px;
+	border-bottom-right-radius: 8px;
 }
+
+.active{
+	background:orange;
+}
+
 .filterCut:hover{
 	background:yellow;
 }
 
 
-
-
-
-/*END Filters*/
+/*Filters END*/
 
 .widget{
 	background-color: #999999;

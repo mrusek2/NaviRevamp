@@ -122,13 +122,24 @@ function GetFilters(){
 					let item = document.createElement('div');
 					item.className = "filterCut";
 					filterList.append(item);
-					item.append(cut.name);
+					item.append(cut.name
 
 					//adding event listener for clickCut FUNCTION
-					item.addEventListener("click" , ()=>{filter.clickCut(cut.id);})
+					item.addEventListener("click" , ()=>{
+						filter.clickCut(cut.id);
+						//togle active filter
+						if(item.className.includes("active")){
+							item.className = "filterCut";
+						}
+						else{
+							item.className += " active";
+						}
+					})
 				}
-
 			}
+
+			
+
 		}
 
 //Returns all EEF Details demos
@@ -164,9 +175,9 @@ window.onload = ()=>{
 	generateFilters(filters)
 
 	//Click the cuts (you want to use this callback when user clicks the buttons)
-	filters[0].clickCut('420')
+	/*filters[0].clickCut('420')
 	filters[1].clickCut('904')
-	filters[2].clickCut('420')
+	filters[2].clickCut('420')*/
 
 	//Example GetEEFDetails() usage
 	let eefData = GetEEFDetails()
