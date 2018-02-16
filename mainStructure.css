@@ -13,8 +13,12 @@
 	left: 9px;
 }
 
-#tableBody{
+#fakeHeader{
+	height: 100px;
+}
 
+.t0_dc{
+	max-width: 250px;
 }
 
 #menu{

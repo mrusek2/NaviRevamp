@@ -27,11 +27,14 @@ function toggleMenuBar(){
 	//Toggle it
 	if(isVisible){
 		hideMenuBar()
+
 	}
 	else{
 		showMenuBar()
+
 	}
 }
+
 
 //Handles various resizing operations
 function handleWindowResize(){
