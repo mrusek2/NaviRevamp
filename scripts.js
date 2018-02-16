@@ -67,21 +67,7 @@ function GetFilters(){
 																												 {"id":"905", "name":"N/A"}, {"id":"904", "name":"Least effective"},
 																												 {"id":"901", "name":"Most Effective"}, {"id":"903", "name":"Frustrated"},
 																												 {"id":"902", "name":"Detached"}, {"id":"905", "name":"N/A"}]},
-			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
-			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
-			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
-			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
-			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
-			{"name":"Effectiveness Profile", "id":"EEF", "cuts":[{"id":"904", "name":"Least effective"}, {"id":"901", "name":"Most Effective"}, {"id":"903", "name":"Frustrated"}, {"id":"902", "name":"Detached"}, {"id":"905", "name":"N/A"}]},
-			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
-			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
-			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
-			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
-			{"name":"Effectiveness Profile", "id":"EEF", "cuts":[{"id":"904", "name":"Least effective"}, {"id":"901", "name":"Most Effective"}, {"id":"903", "name":"Frustrated"}, {"id":"902", "name":"Detached"}, {"id":"905", "name":"N/A"}]},
-			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
-			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
-			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
-			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
+
 
 
 
@@ -157,15 +143,22 @@ function GetFilters(){
 				}
 				else{//generating huge demographics
 
+					//Generating a name of the DEMO above its FILTERS
+					let filterName = document.createElement('div')
+					filterName.className = "filterName"
+					filterGroup.append(filterName)
+					filterName.append(filter.name)
+
 					//generate colapse able menu
 					let filterMenu = document.createElement("div");
 					filterMenu.className = "filterMenu";
 					filterGroup.append(filterMenu);
 
-					let filterName = document.createElement('div')
-					filterName.className = "filterMenuName"
-					filterMenu.append(filterName)
-					filterName.append(filter.name)
+
+					let filterBox = document.createElement('div')
+					filterBox.className = "filterMenuName"
+					filterMenu.append(filterBox)
+					filterBox.append("choose")
 
 
 					//Generating a block in which FILTERS will be!
@@ -174,7 +167,7 @@ function GetFilters(){
 					filterMenu.append(filterList)
 
 					//attatching event listener to show filters after click
-					filterName.addEventListener("click", ()=>{
+					filterBox.addEventListener("click", ()=>{
 						if(filterList.className.includes("filterMenuListActive")){
 							filterList.className = "filterMenuList"
 						}
