@@ -5,6 +5,74 @@
 	height: 100vh;
 }
 
+/*----------------------------------------*/
+/*----------------------------------------*/
+/*TOP ROW OF THE TABLE*/
+#header{
+	position: sticky;
+	background-color: #999999;
+	top: 0px;
+	z-index: 1;
+	width: 100%;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+
+	border-bottom: 1px solid #dee2e6;
+}
+
+/*ALL ROWS OF THE TABLE EXCEPT THE TOP ROW (HEADER)*/
+.tableContent{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+
+	border-bottom: 1px solid #dee2e6;
+}
+
+/*ALL THE 'CELLS' ON ALL ROWS*/
+.innerDivs{
+	width: 10%;
+	padding-right: 5px;
+}
+
+/*ALL CELLS IN THE FIRST TABLE COLUMN*/
+.firstColumn{
+	position: sticky;
+	left: 0px;
+	background-color: #999999;
+	width: 5%;
+	/*border-left: 1px solid #dee2e6;*/
+}
+
+/*ALL CELLS IN THE SECOND TABLE COLUMN*/
+.secondColumn{
+	width: 30%;
+	padding-right: 2%;
+}
+
+/*ALL CELLS IN THE THIRD TABLE COLUMN*/
+.thirdColumn{
+	width: 10%;
+}
+
+/*DISTRIBUTION CHART COLUMN*/
+.distributionColumn{
+	width: 100px;
+	padding-right: 2%;
+	display: flex;
+	justify-content: space-around;
+}
+
+/*DISTRIBUTION CHARTS*/
+.barchart{
+
+}
+
+/*----------------------------------------*/
+/*----------------------------------------*/
+
 #menu{
 	display: block;
 	height: 100vh;
@@ -74,14 +142,15 @@
 	max-height: 80vh;
 }
 
-.tableWrapper{
-	max-height: 70vh;
-	overflow:auto;
+#tableWrapper{
+	height: 70vh;
+	overflow: auto;
 }
 
-.table thead{
-	border-bottom: 1px solid #FFFFFF !important;
+table{
+	max-height: 70vh !important;
 }
+
 @media (min-width: 768px){
 	#menu{
 		position: relative;

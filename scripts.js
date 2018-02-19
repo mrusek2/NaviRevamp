@@ -27,11 +27,27 @@ function toggleMenuBar(){
 	//Toggle it
 	if(isVisible){
 		hideMenuBar()
+		widerHeader()
 	}
 	else{
 		showMenuBar()
+		thinnerHeader()
 	}
 }
+
+function widerHeader(){
+	/*let head = document.getElementById('tableHead')
+	let under = document.getElementById('fakeHeader')
+	under.style.height='48px'
+	under.style.transition='0.5s'*/
+}
+function thinnerHeader(){
+	/*let head = document.getElementById('tableHead')
+	let under = document.getElementById('fakeHeader')
+	under.style.height='96px'
+	under.style.transition='0.5s'*/
+}
+
 
 //Handles various resizing operations
 function handleWindowResize(){
@@ -88,6 +104,43 @@ function GetEEFDetails(){
 		return cuts
 }
 
+
+//place divs in the place of table and assign them classes and ids
+function change(table) {
+	let tempMemory = document.createElement("div")
+	let rows = table.rows
+	for(i = 0; i < rows.length; i++){
+		let newDiv = document.createElement("div")
+
+		for(j = 1; j < rows[i].childNodes.length; j++){
+			if(j % 2 == 1){
+				let newInnerDiv = document.createElement("div")
+
+				newInnerDiv.innerHTML = rows[i].childNodes[j].innerHTML
+				newInnerDiv.classList.add("innerDivs")
+				newDiv.appendChild(newInnerDiv)
+			}
+		}
+		if(i == 0){
+			newDiv.id = "header"
+		}
+		else{
+			newDiv.classList.add("tableContent")
+		}
+
+		newDiv.firstElementChild.classList.add("firstColumn")
+		newDiv.childNodes[1].classList.add("secondColumn")
+		newDiv.childNodes[2].classList.add("thirdColumn")
+		newDiv.childNodes[6].classList.add("distributionColumn")
+		newDiv.childNodes[6].classList.remove("innerDivs")
+
+		tempMemory.appendChild(newDiv)
+	}
+	document.getElementById("tableWrapper").appendChild(tempMemory)
+	document.getElementById("tableWrapper").removeChild(table)
+
+}
+
 window.onload = ()=>{
 	//Add an event listener on show/hide menu button
 	document.getElementById('menuButton').addEventListener('click', toggleMenuBar)
@@ -120,4 +173,6 @@ window.onload = ()=>{
 		console.log(cut.scores)
 	}
 
+	//Change the table to system of 'divs'
+	change(document.getElementById("myTable"))
 }
