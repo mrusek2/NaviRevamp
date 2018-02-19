@@ -35,7 +35,7 @@ function toggleMenuBar(){
 //toggle Filters
 function toggleFilters(){
 	//Get the filters div
-	let filters = document.getElementById('filters')
+	let filters = document.getElementById('filtersModal')
 
 	//Check if it's visible
 	let isVisible = filters.className === 'visibleFilters'
@@ -101,27 +101,46 @@ function GetFilters(){
 	//generates filters
 	function generateFilters(filters){
 		//Find the Filters block.
-		let filtersBlock = document.getElementById('filters')
+		let filtersMenu = document.getElementById('filtersCategories')
+		let filtersSelection = document.getElementById('filtersSelection')
+		let filtersFooter = document.getElementById('filtersFooter')
 
 		//generating blocks with DEMOS and FILTERS
+		let i = 0;
 		for(let filter of filters){
-				//Generating a Filter group and adding it to the site
-				let filterGroup = document.createElement('div')
-				filtersBlock.append(filterGroup);
-				filterGroup.className="filterGroup"
-				if(filter.cuts.length<=5){//generating small demographics
 					//Generating a name of the DEMO above its FILTERS
 					let filterName = document.createElement('div')
 					filterName.className = "filterName"
-					filterGroup.append(filterName)
+					filterName.id="fname-"+i;
+					filtersMenu.append(filterName)
 					filterName.append(filter.name)
 
 					//Generating a block in which FILTERS will be!
 					let filterList = document.createElement('div')
-					filterList.className = "filterList"
-					filterGroup.append(filterList)
+					if(i == 0){
+						filterList.className = "visibleList";
+					}
+					else{
+						filterList.className = "hiddenList";
+					}
+					filtersSelection.append(filterList)
+
+					filterName.addEventListener("click",(e)=>{
+						let id = event.target.id.replace(/fname-/, '');
+						event.target.style.background= ""
+						let ch = filtersSelection.children;
+						for (j = 0; j < ch.length; j++) {
+								if(j==id){
+									ch[j].className = "visibleList";
+								}
+								else{
+									ch[j].className = "hiddenList";
+								}
+				    }
+					})
 
 					//adding FILTERS to filterList
+
 					for(let cut of filter.cuts){
 						let item = document.createElement('div');
 						item.className = "filterCut";
@@ -139,73 +158,14 @@ function GetFilters(){
 								item.className += " active";
 							}
 						})
+
 					}
-				}
-				else{//generating huge demographics
-
-					//Generating a name of the DEMO above its FILTERS
-					let filterName = document.createElement('div')
-					filterName.className = "filterName"
-					filterGroup.append(filterName)
-					filterName.append(filter.name)
-
-					//generate colapse able menu
-					let filterMenu = document.createElement("div");
-					filterMenu.className = "filterMenu";
-					filterGroup.append(filterMenu);
-
-
-					let filterBox = document.createElement('div')
-					filterBox.className = "filterMenuName"
-					filterMenu.append(filterBox)
-					filterBox.append("choose")
-
-
-					//Generating a block in which FILTERS will be!
-					let filterList = document.createElement('div')
-					filterList.className = "filterMenuList"
-					filterMenu.append(filterList)
-
-					//attatching event listener to show filters after click
-					filterBox.addEventListener("click", ()=>{
-						if(filterList.className.includes("filterMenuListActive")){
-							filterList.className = "filterMenuList"
-						}
-						else{
-							filterList.className += " filterMenuListActive";
-						}
-					});
-
-					//adding FILTERS to filterList
-					for(let cut of filter.cuts){
-						let item = document.createElement('div');
-						item.className = "filterMenuCut";
-						filterList.append(item);
-						item.append(cut.name)
-
-						//adding event listener for clickCut FUNCTION
-						item.addEventListener("click" , ()=>{
-							filter.clickCut(cut.id);
-							//togle active filter
-							if(item.className.includes("active")){
-								item.className = "filterMenuCut";
-							}
-							else{
-								item.className += " active";
-							}
-						})
-					}
-
-				}
+					i++;
 			}
-
-			let submitBlock = document.createElement("div");
-			submitBlock.className = "filtersSubmitBlock"
-			filtersBlock.append(submitBlock);
 
 			let submit = document.createElement("div");
 			submit.className = "filtersSubmit"
-			submitBlock.append(submit);
+			filtersFooter.append(submit);
 			submit.append("Apply")
 
 			submit.addEventListener("click",()=>{
@@ -229,6 +189,8 @@ window.onload = ()=>{
 
 	//add an event listener on show/hide filters button
 	document.getElementById('filtersButton').addEventListener('click', toggleFilters)
+	document.getElementById('filters').addEventListener('click', toggleFilters)
+	document.getElementById('filtersModal').addEventListener('click', toggleFilters)
 	//Add an event listener to the contentWrapper as well
 	//for mobile - if we click on the contentWrapper we want the menu to
 	//disappear, etc.

@@ -8,6 +8,16 @@
 		<link rel="stylesheet" href="menuContent.css"/>
 	</head>
 	<body>
+		<div id="filtersModal" class="hiddenFilters">
+			<div id="filters">
+				<div style="clear:both;">
+					<div id="filtersCategories"></div>
+					<div id="filtersSelection"></div>
+				</div>
+				<div id="filtersFooter">
+				</div>
+			</div>
+		</div>
 		<div id="siteWrapper">
 			<!-- DYNAMICALLY GENERATED MENU GOES HERE -->
 			<div id="menu" class="visibleMenu"></div>
@@ -23,7 +33,6 @@
 				<!-- MAIN CONTENT GOES HERE -->
 				<div id="contentWrapperInner">
 					<div id="content" class="container-fluid p-3">
-						<div id="filters" class="hiddenFilters"></div>
 						<!-- ALL OF THE DATA PARTS GO HERE -->
 						<div class="widget col-12 border rounded mb-2 p-2">
 							<div class="tableWrapper">
