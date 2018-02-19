@@ -109,6 +109,21 @@ function tableHandler(){
 	let head = document.getElementById("tableHead")
 
 }
+function change() {
+	let table = document.getElementById("myTable")
+	let rows = table.rows
+	for(i = 0; i < rows.length; i++){
+		let y = rows[i].innerHTML
+		let newDiv = document.createElement("div")
+		newDiv.innerHTML = y
+		if(i == 0){
+			newDiv.id = "header"
+		}
+		document.getElementById("tableWrapper").appendChild(newDiv)
+	}
+	document.getElementById("tableWrapper").removeChild(table)
+
+}
 
 
 window.onload = ()=>{
@@ -145,4 +160,5 @@ window.onload = ()=>{
 
 	//Handler the fixed header and first column of the table
 	tableHandler()
+	change()
 }

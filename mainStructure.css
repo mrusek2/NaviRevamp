@@ -5,19 +5,10 @@
 	height: 100vh;
 }
 
-#tableHead{
-	display: table;
-	background-color: #999999;
+#header{
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	z-index: auto;
-}
-
-#tbody1{
-	overflow:auto;
-	display:block;
-	max-height:54vh;
 }
 
 #menu{
@@ -89,12 +80,13 @@
 	max-height: 80vh;
 }
 
-.tableWrapper{
-	max-height: 70vh;
+#tableWrapper{
+	height: 70vh;
+	overflow: auto;
 }
 
-.table thead{
-	border-bottom: 1px solid #FFFFFF !important;
+table{
+	max-height: 70vh !important;
 }
 
 @media (min-width: 768px){
