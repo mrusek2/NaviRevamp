@@ -108,7 +108,7 @@ function GetFilters(){
 		//generating blocks with DEMOS and FILTERS
 		let i = 0;
 		for(let filter of filters){
-					//Generating a name of the DEMO above its FILTERS
+					//Generating a name of the DEMO for the menu
 					let filterName = document.createElement('div')
 					filterName.className = "filterName"
 					filterName.id="fname-"+i;
@@ -125,6 +125,7 @@ function GetFilters(){
 					}
 					filtersSelection.append(filterList)
 
+					//Adding event listener for filter menu items so they show correct groups
 					filterName.addEventListener("click",(e)=>{
 						let id = event.target.id.replace(/fname-/, '');
 						event.target.style.background= ""
@@ -144,6 +145,7 @@ function GetFilters(){
 					for(let cut of filter.cuts){
 						let item = document.createElement('div');
 						item.className = "filterCut";
+						item.id = "fmenu-" + filter.id + "-" + cut.id
 						filterList.append(item);
 						item.append(cut.name)
 
@@ -153,9 +155,24 @@ function GetFilters(){
 							//togle active filter
 							if(item.className.includes("active")){
 								item.className = "filterCut";
+								let activeCut = document.getElementById(filter.id + "-" + cut.id)
+								activeCut.parentNode.removeChild(activeCut);
 							}
 							else{
 								item.className += " active";
+								let activeCut = document.createElement("div")
+								activeCut.className="activeCut";
+								activeCut.id = filter.id + "-" + cut.id
+								filtersFooter.append(activeCut)
+								activeCut.append(cut.name)
+
+								activeCut.addEventListener("click",(e)=>{
+									let rcut = e.target;
+									let acut = document.getElementById("fmenu-" + e.target.id)
+									console.log(acut.id)
+									acut.className = "filterCut";
+									rcut.parentNode.removeChild(rcut)
+								})
 							}
 						})
 
@@ -189,8 +206,12 @@ window.onload = ()=>{
 
 	//add an event listener on show/hide filters button
 	document.getElementById('filtersButton').addEventListener('click', toggleFilters)
-	document.getElementById('filters').addEventListener('click', toggleFilters)
-	document.getElementById('filtersModal').addEventListener('click', toggleFilters)
+	document.getElementById('filtersModal').addEventListener('click', (event)=>{
+		let modal = document.getElementById("filtersModal")
+		if (event.target === modal) {
+				toggleFilters();
+		}
+	})
 	//Add an event listener to the contentWrapper as well
 	//for mobile - if we click on the contentWrapper we want the menu to
 	//disappear, etc.

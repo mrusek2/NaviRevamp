@@ -123,6 +123,7 @@
 	height:8vh;
 	background:green;
 	clear: both;
+	overflow-y: auto;
 }
 
 #filtersButton{
@@ -136,7 +137,8 @@
 
 .filtersSubmit{
 	float:right;
-	margin-right:2vw;
+	margin-right:0.5vw;
+	margin-top:2vh;
 	padding:5px 10px;
 	background:blue;
 	color:white;
@@ -160,11 +162,22 @@
 	display:none;
 }
 
+.activeCut{
+	float:left;
+	background:lightblue;
+	padding:2px 5px;
+	border-radius: 2px;
+	color:white;
+	margin-left:3px;
+	margin-top :3px;
+}
+
 
 .filterCut{
 	float:left;
 	Background:red;
-	padding:10px 5px;
+	padding:10px 1%;
+	width:48%;
 }
 
 .filterCut:hover{
