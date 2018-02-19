@@ -104,27 +104,41 @@ function GetEEFDetails(){
 		return cuts
 }
 
-//Table handler - freeze table header and first column while scrolling.
-function tableHandler(){
-	let head = document.getElementById("tableHead")
 
-}
+
 function change() {
 	let table = document.getElementById("myTable")
 	let rows = table.rows
 	for(i = 0; i < rows.length; i++){
-		let y = rows[i].innerHTML
 		let newDiv = document.createElement("div")
-		newDiv.innerHTML = y
+
+		for(j = 1; j < rows[i].childNodes.length; j++){
+			if(j % 2 == 1){
+				let newInnerDiv = document.createElement("div")
+				let y = rows[i].childNodes[j].innerHTML
+
+				newInnerDiv.innerHTML = y
+				newInnerDiv.classList.add("innerDivs")
+				newDiv.appendChild(newInnerDiv)
+			}
+		}
+
 		if(i == 0){
 			newDiv.id = "header"
 		}
+		else{
+			newDiv.classList.add("tableContent")
+		}
+		newDiv.firstElementChild.classList.add("firstColumn")
 		document.getElementById("tableWrapper").appendChild(newDiv)
 	}
 	document.getElementById("tableWrapper").removeChild(table)
 
 }
 
+//Table handler - freeze table header and first column while scrolling.
+function tableHandler(){
+}
 
 window.onload = ()=>{
 	//Add an event listener on show/hide menu button
@@ -158,7 +172,7 @@ window.onload = ()=>{
 		console.log(cut.scores)
 	}
 
+	change()
 	//Handler the fixed header and first column of the table
 	tableHandler()
-	change()
 }
