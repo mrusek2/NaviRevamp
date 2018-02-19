@@ -60,13 +60,13 @@ function handleWindowResize(){
 //Returns all filters
 function GetFilters(){
 		let allFilters = [
-			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male"}, {"id":"430", "name":"Female"}]},
-			{"name":"Effectiveness Profile", "id":"EEF", "cuts":[{"id":"904", "name":"Least effective"}, {"id":"901", "name":"Most Effective"}, {"id":"903", "name":"Frustrated"}, {"id":"902", "name":"Detached"}, {"id":"905", "name":"N/A"}]},
-			{"name":"Some Long demo", "id":"LongDemo", "cuts":[{"id":"904", "name":"Least effective"}, {"id":"901", "name":"Most Effective"},
-																												 {"id":"903", "name":"Frustrated"}, {"id":"902", "name":"Detached"},
-																												 {"id":"905", "name":"N/A"}, {"id":"904", "name":"Least effective"},
-																												 {"id":"901", "name":"Most Effective"}, {"id":"903", "name":"Frustrated"},
-																												 {"id":"902", "name":"Detached"}, {"id":"905", "name":"N/A"}]},
+			{"name":"Gender", "id":"Gender", "cuts":[{"id":"420", "name":"Male","enabled":"false"}, {"id":"430", "name":"Female" ,"enabled":"true"}]},
+			{"name":"Effectiveness Profile", "id":"EEF", "cuts":[{"id":"904", "name":"Least effective","enabled":"false"}, {"id":"901", "name":"Most Effective","enabled":"false"}, {"id":"903", "name":"Frustrated","enabled":"false"}, {"id":"902", "name":"Detached","enabled":"false"}, {"id":"905", "name":"N/A","enabled":"false"}]},
+			{"name":"Some Long demo", "id":"LongDemo", "cuts":[{"id":"904", "name":"Least effective","enabled":"true"}, {"id":"901", "name":"Most Effective","enabled":"false"},
+																												 {"id":"903", "name":"Frustrated","enabled":"false"}, {"id":"902", "name":"Detached","enabled":"false"},
+																												 {"id":"905", "name":"N/A","enabled":"false"}, {"id":"904", "name":"Least effective","enabled":"false"},
+																												 {"id":"901", "name":"Most Effective","enabled":"false"}, {"id":"903", "name":"Frustrated","enabled":"false"},
+																												 {"id":"902", "name":"Detached","enabled":"false"}, {"id":"905", "name":"N/A","enabled":"false"}]},
 
 
 
@@ -100,6 +100,7 @@ function GetFilters(){
 
 	//generates filters
 	function generateFilters(filters){
+		let enabled = [];
 		//Find the Filters block.
 		let filtersMenu = document.getElementById('filtersCategories')
 		let filtersSelection = document.getElementById('filtersSelection')
@@ -141,18 +142,40 @@ function GetFilters(){
 					})
 
 					//adding FILTERS to filterList
-
 					for(let cut of filter.cuts){
 						let item = document.createElement('div');
-						item.className = "filterCut";
+						//unique ID
 						item.id = "fmenu-" + filter.id + "-" + cut.id
+						//if the Filter is already enabled generate a active cut in a footer
+						//filter will have class active
+						if(cut.enabled === "true"){
+							item.className = "filterCut active";
+							enabled.push({"filter":filter , "cut":cut});
+							let activeCut = document.createElement("div")
+							activeCut.className="activeCut";
+							activeCut.id = filter.id + "-" + cut.id
+							filtersFooter.append(activeCut)
+							activeCut.append(cut.name)
+
+							activeCut.addEventListener("click",(e)=>{
+								let rcut = e.target;
+								let acut = document.getElementById("fmenu-" + e.target.id)
+								filter.clickCut(cut.id);
+								acut.className = "filterCut";
+								rcut.parentNode.removeChild(rcut)
+							})
+						}
+						//otherwise just generate a filter
+						else{
+							item.className = "filterCut";
+						}
 						filterList.append(item);
 						item.append(cut.name)
 
 						//adding event listener for clickCut FUNCTION
 						item.addEventListener("click" , ()=>{
 							filter.clickCut(cut.id);
-							//togle active filter
+							//togle active filter and remove activeCut from the footer
 							if(item.className.includes("active")){
 								item.className = "filterCut";
 								let activeCut = document.getElementById(filter.id + "-" + cut.id)
@@ -160,16 +183,18 @@ function GetFilters(){
 							}
 							else{
 								item.className += " active";
+								//add activeCut fo footer
 								let activeCut = document.createElement("div")
 								activeCut.className="activeCut";
 								activeCut.id = filter.id + "-" + cut.id
 								filtersFooter.append(activeCut)
 								activeCut.append(cut.name)
 
+								//add event listener for toggling filters throught footer's activeCuts
 								activeCut.addEventListener("click",(e)=>{
 									let rcut = e.target;
 									let acut = document.getElementById("fmenu-" + e.target.id)
-									console.log(acut.id)
+									filter.clickCut(cut.id);
 									acut.className = "filterCut";
 									rcut.parentNode.removeChild(rcut)
 								})
@@ -188,6 +213,8 @@ function GetFilters(){
 			submit.addEventListener("click",()=>{
 				toggleFilters();
 			})
+
+			return enabled
 
 		}
 
@@ -227,7 +254,11 @@ window.onload = ()=>{
 	//Get filters
 	let filters = GetFilters()
 	//Set up some divs with them, etc. with event handlers
-	generateFilters(filters)
+	var enabledFilters = generateFilters(filters)
+	for (let i = 0 ; i<enabledFilters.length;i++){
+		enabledFilters[i].filter.clickCut(enabledFilters[i].cut.id)
+	}
+	var selectedFilters = [];
 
 	//Click the cuts (you want to use this callback when user clicks the buttons)
 	/*filters[0].clickCut('420')
