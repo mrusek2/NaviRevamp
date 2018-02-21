@@ -120,4 +120,18 @@ window.onload = ()=>{
 		console.log(cut.scores)
 	}
 
+	//Load handlers for menu items
+	let menuItems = document.querySelectorAll('MenuList > .outerList');
+	for(let item of menuItems){
+		item.addEventListener('click', (e)=>{
+			e.target.classList.toggle('selectedOuter');
+		})
+	}
+	let menuItemsInner = document.querySelectorAll('MenuList > .innerList');
+	for(let item of menuItemsInner){
+		item.addEventListener('click', (e)=>{
+			e.target.classList.toggle('selectedInner');
+		})
+	}
+
 }

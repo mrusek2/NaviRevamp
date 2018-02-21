@@ -8,3 +8,87 @@
 	background-size: 253px 77px;
 	background-position: center;
 }
+
+MenuList{
+	color: rgb(99, 99, 99);
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+MenuList .outerList{
+	padding-left: 26px;
+}
+
+MenuList .innerList{
+	background-color: rgb(32, 32, 32);
+	padding-left: 46px;
+}
+
+MenuList div{
+	width: 100%;
+	background-clip: border-box;
+	height: 46px;
+	display: flex;
+	align-items: center;
+	vertical-align: center;
+}
+
+/*OUTER ITEMS HOVER */
+MenuList .outerList:hover{
+	cursor: pointer;
+	padding-left: 0px !important;
+	color: white;
+}
+
+MenuList .outerList:hover:before{
+	content:'';
+	background-color: rgb(0, 95, 75);
+	width:8px;
+	height:100%;
+	z-index:25;
+	margin-right:18px;
+}
+
+MenuList .selectedOuter{
+	padding-left: 0px !important;
+	color: white;
+}
+
+MenuList .selectedOuter::before{
+	content:'';
+	background-color: rgb(0, 95, 75);
+	width:8px;
+	height:100%;
+	z-index:25;
+	margin-right:18px;
+}
+
+/*INNTER ITEMS HOVER */
+MenuList .innerList:hover{
+	cursor: pointer;
+	padding-left: 0px !important;
+	color: white;
+}
+
+MenuList .innerList:hover:before{
+	content:'';
+	background-color: rgb(0, 95, 75);
+	width:8px;
+	height:100%;
+	z-index:25;
+	margin-right:38px;
+}
+
+MenuList .selectedInner{
+	padding-left: 0px !important;
+	color: white;
+}
+
+MenuList .selectedInner::before{
+	content:'';
+	background-color: rgb(0, 95, 75);
+	width:8px;
+	height:100%;
+	z-index:25;
+	margin-right:38px;
+}
