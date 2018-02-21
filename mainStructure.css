@@ -94,13 +94,15 @@
 }
 
 .widget{
-	background-color: #999999;
+	background-color: #FFFFFF;
 }
 
 .widgetHeader{
 	width: 100%;
 	background: rgb(247, 247, 247);
 	border: 1px solid rgb(195, 195, 195);
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
 	border-bottom: 0px;
 	max-height: 40px;
 }
@@ -110,6 +112,8 @@
 	height: calc(100% - 40px);
 	background-color: #FFFFFF;
 	border: 1px solid rgb(195, 195, 195);
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
 }
 
 .tableWrapper{
