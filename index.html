@@ -6,6 +6,7 @@
 		<script src="scripts.js"></script>
 		<link rel="stylesheet" href="mainStructure.css"/>
 		<link rel="stylesheet" href="menuContent.css"/>
+		<link rel="stylesheet" href="widgetsPlacementDashboard.css"/>
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	</head>
 	<body>
@@ -36,501 +37,513 @@
 
 				<!-- MAIN CONTENT GOES HERE -->
 				<div id="contentWrapperInner">
-					<div id="content" class="container-fluid p-3">
-						<!-- ALL OF THE DATA PARTS GO HERE -->
-						<!-- 
-						<div class="widget col-12 border rounded mb-2 p-2">
-							<div class="tableWrapper">
-								<table id="confirmit_agg_table" class="t0_table table border">
-								<thead class="border">
-							    <tr class="t0_tr TableRow">
-							      <td rowspan="2" class="t0_cc" style="width:100px;"></td>
-										<td rowspan="2" class="t0_chc"style="width:500px;">Item</td>
-							      <td rowspan="2" class="t0_chc">Valid N</td>
-							      <td rowspan="2" class="t0_chc">% Fav</td>
-							      <td rowspan="2" class="t0_chc">% Neu</td>
-							      <td rowspan="2" class="t0_chc">% Unfav</td>
-							      <td rowspan="2" class="t0_chc">Distribution</td>
-										<td class="t0_chc">Trend 2015</td>
-							      <td class="t0_chc">General Industry (Norm)</td>
-							      <td class="t0_chc">United States (P75) (Norm)</td>
-							    </tr>
-							  </thead>
-							  <tbody>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">X</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">Employee Engagement</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">&nbsp;</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">55</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">23</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">22</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_35">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_HighlightRow_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="55%"></td>
-							              <td class="barchart-cell cf_HighlightRow_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="23%"></td>
-							              <td class="barchart-cell cf_HighlightRow_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="22%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell cf_GreenSig">4 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-10 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-22 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">46.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">I feel motivated to go beyond my formal job responsibilities</td>
-							      <td class="t0_dc TableDataCell">2,676</td>
-							      <td class="t0_dc TableDataCell">63</td>
-							      <td class="t0_dc TableDataCell">19</td>
-							      <td class="t0_dc TableDataCell">18</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_38">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">1</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-8 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-18 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">47.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">the company motivates me to contribute more than is required</td>
-							      <td class="t0_dc TableDataCell">2,705</td>
-							      <td class="t0_dc TableDataCell">62</td>
-							      <td class="t0_dc TableDataCell">19</td>
-							      <td class="t0_dc TableDataCell">18</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_41">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">-1</td>
-							      <td class="t0_dc TableDataCell cf_GreenSig">2 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-8 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">49.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">I would recommend the company to family or friends as a place to work</td>
-							      <td class="t0_dc TableDataCell">2,681</td>
-							      <td class="t0_dc TableDataCell">63</td>
-							      <td class="t0_dc TableDataCell">19</td>
-							      <td class="t0_dc TableDataCell">18</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_44">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">0</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-7 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-17 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">50.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">Given your choice, how long would you plan to continue working for the company?</td>
-							      <td class="t0_dc TableDataCell">2,563</td>
-							      <td class="t0_dc TableDataCell">33</td>
-							      <td class="t0_dc TableDataCell">34</td>
-							      <td class="t0_dc TableDataCell">32</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_47">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="33%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="35%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="32%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell cf_GreenSig">18 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-27 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-43 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">X</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">Employee Enablement</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">&nbsp;</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">63</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">20</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">17</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_50">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_HighlightRow_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
-							              <td class="barchart-cell cf_HighlightRow_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
-							              <td class="barchart-cell cf_HighlightRow_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="17%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">-1</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-5 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-10 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">42.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">Conditions in my job allow me to be about as productive as I can be</td>
-							      <td class="t0_dc TableDataCell">2,677</td>
-							      <td class="t0_dc TableDataCell">63</td>
-							      <td class="t0_dc TableDataCell">20</td>
-							      <td class="t0_dc TableDataCell">17</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_53">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="17%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">-1</td>
-							      <td class="t0_dc TableDataCell">0</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-5 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">43.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">There are no significant barriers at work to doing my job well</td>
-							      <td class="t0_dc TableDataCell">2,694</td>
-							      <td class="t0_dc TableDataCell">63</td>
-							      <td class="t0_dc TableDataCell">21</td>
-							      <td class="t0_dc TableDataCell">16</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_56">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="21%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="16%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">-1</td>
-							      <td class="t0_dc TableDataCell cf_GreenSig">4 *</td>
-							      <td class="t0_dc TableDataCell">1</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">44.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">My job provides opportunities to do challenging and interesting work</td>
-							      <td class="t0_dc TableDataCell">2,691</td>
-							      <td class="t0_dc TableDataCell">64</td>
-							      <td class="t0_dc TableDataCell">20</td>
-							      <td class="t0_dc TableDataCell">16</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_59">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="64%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="16%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">0</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-11 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-19 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">45.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">My job makes good use of my skills and abilities</td>
-							      <td class="t0_dc TableDataCell">2,709</td>
-							      <td class="t0_dc TableDataCell">62</td>
-							      <td class="t0_dc TableDataCell">19</td>
-							      <td class="t0_dc TableDataCell">18</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_62">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">-1</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-12 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-17 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">X</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">Clear and Promising Direction</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">&nbsp;</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">62</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">20</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">18</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_65">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_HighlightRow_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="62%"></td>
-							              <td class="barchart-cell cf_HighlightRow_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
-							              <td class="barchart-cell cf_HighlightRow_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">0</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-12 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-21 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">1.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">I have a good understanding of the company's strategy and goals</td>
-							      <td class="t0_dc TableDataCell">2,688</td>
-							      <td class="t0_dc TableDataCell">62</td>
-							      <td class="t0_dc TableDataCell">19</td>
-							      <td class="t0_dc TableDataCell">19</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_68">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="62%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">1</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-15 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-24 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">2.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">I believe that the company's strategy and goals are the right ones for the company at this time</td>
-							      <td class="t0_dc TableDataCell">2,686</td>
-							      <td class="t0_dc TableDataCell">63</td>
-							      <td class="t0_dc TableDataCell">19</td>
-							      <td class="t0_dc TableDataCell">18</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_71">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">2</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-5 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-13 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">3.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">I understand the relationship between my job and the company's strategy and goals</td>
-							      <td class="t0_dc TableDataCell">2,694</td>
-							      <td class="t0_dc TableDataCell">62</td>
-							      <td class="t0_dc TableDataCell">20</td>
-							      <td class="t0_dc TableDataCell">18</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_74">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="62%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">-1</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-19 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-25 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">4.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">the company has good business prospects over the next 2-3 years</td>
-							      <td class="t0_dc TableDataCell">2,669</td>
-							      <td class="t0_dc TableDataCell">62</td>
-							      <td class="t0_dc TableDataCell">22</td>
-							      <td class="t0_dc TableDataCell">17</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_77">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="61%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="22%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="17%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">0</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-7 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-21 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">X</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">Confidence in Leaders</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">&nbsp;</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">62</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">20</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">18</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_80">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_HighlightRow_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="62%"></td>
-							              <td class="barchart-cell cf_HighlightRow_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
-							              <td class="barchart-cell cf_HighlightRow_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">0</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-4 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-12 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">3.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">I understand the relationship between my job and the company's strategy and goals</td>
-							      <td class="t0_dc TableDataCell">2,694</td>
-							      <td class="t0_dc TableDataCell">62</td>
-							      <td class="t0_dc TableDataCell">20</td>
-							      <td class="t0_dc TableDataCell">18</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_83">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="62%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">-1</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-19 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-25 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">5.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">the company is open and honest in communications to employees</td>
-							      <td class="t0_dc TableDataCell">2,679</td>
-							      <td class="t0_dc TableDataCell">61</td>
-							      <td class="t0_dc TableDataCell">21</td>
-							      <td class="t0_dc TableDataCell">18</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_86">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="61%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="21%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">-1</td>
-							      <td class="t0_dc TableDataCell cf_GreenSig">3 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-5 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">6.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">the company is effectively managed and well-run</td>
-							      <td class="t0_dc TableDataCell">2,669</td>
-							      <td class="t0_dc TableDataCell">65</td>
-							      <td class="t0_dc TableDataCell">19</td>
-							      <td class="t0_dc TableDataCell">16</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_89">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="65%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="16%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell cf_GreenSig">5 *</td>
-							      <td class="t0_dc TableDataCell cf_GreenSig">4 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-5 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">7.</td>
-							      <td class="t0_dc TableDataCell cf_DataCellWideText">I have trust and confidence in the company's senior leadership team</td>
-							      <td class="t0_dc TableDataCell">2,649</td>
-							      <td class="t0_dc TableDataCell">61</td>
-							      <td class="t0_dc TableDataCell">19</td>
-							      <td class="t0_dc TableDataCell">20</td>
-							      <td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_92">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="61%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
-							              <td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-3 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-2 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-10 *</td>
-							    </tr>
-							    <tr class="t0_tr TableRow">
-							      <td class="t0_rhc TableRowHeaders">X</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">Authority and Empowerment</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">&nbsp;</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">62</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">20</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow">17</td>
-							      <td class="t0_dc TableDataCell cf_HighlightRow_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_95">
-							        <table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
-							          <tbody>
-							            <tr>
-							              <td class="barchart-cell cf_HighlightRow_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
-							              <td class="barchart-cell cf_HighlightRow_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
-							              <td class="barchart-cell cf_HighlightRow_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="17%"></td>
-							            </tr>
-							          </tbody>
-							        </table>
-							      </td>
-							      <td class="t0_dc TableDataCell">0</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-8 *</td>
-							      <td class="t0_dc TableDataCell cf_RedSig">-17 *</td>
-							    </tr>
-							  </tbody>
-							</table>
+					<div id="evenWrappererContentWrapper">
+						<div id="content">
+							<!-- ALL OF THE DATA PARTS GO HERE -->
+							<!-- 
+							<div class="widget">
+								<div class="tableWrapper">
+									<table id="confirmit_agg_table" class="t0_table table border">
+									<thead class="border">
+										<tr class="t0_tr TableRow">
+											<td rowspan="2" class="t0_cc" style="width:100px;"></td>
+											<td rowspan="2" class="t0_chc"style="width:500px;">Item</td>
+											<td rowspan="2" class="t0_chc">Valid N</td>
+											<td rowspan="2" class="t0_chc">% Fav</td>
+											<td rowspan="2" class="t0_chc">% Neu</td>
+											<td rowspan="2" class="t0_chc">% Unfav</td>
+											<td rowspan="2" class="t0_chc">Distribution</td>
+											<td class="t0_chc">Trend 2015</td>
+											<td class="t0_chc">General Industry (Norm)</td>
+											<td class="t0_chc">United States (P75) (Norm)</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">X</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">Employee Engagement</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">&nbsp;</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">55</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">23</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">22</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_35">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_HighlightRow_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="55%"></td>
+															<td class="barchart-cell cf_HighlightRow_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="23%"></td>
+															<td class="barchart-cell cf_HighlightRow_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="22%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell cf_GreenSig">4 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-10 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-22 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">46.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">I feel motivated to go beyond my formal job responsibilities</td>
+											<td class="t0_dc TableDataCell">2,676</td>
+											<td class="t0_dc TableDataCell">63</td>
+											<td class="t0_dc TableDataCell">19</td>
+											<td class="t0_dc TableDataCell">18</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_38">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">1</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-8 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-18 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">47.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">the company motivates me to contribute more than is required</td>
+											<td class="t0_dc TableDataCell">2,705</td>
+											<td class="t0_dc TableDataCell">62</td>
+											<td class="t0_dc TableDataCell">19</td>
+											<td class="t0_dc TableDataCell">18</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_41">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">-1</td>
+											<td class="t0_dc TableDataCell cf_GreenSig">2 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-8 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">49.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">I would recommend the company to family or friends as a place to work</td>
+											<td class="t0_dc TableDataCell">2,681</td>
+											<td class="t0_dc TableDataCell">63</td>
+											<td class="t0_dc TableDataCell">19</td>
+											<td class="t0_dc TableDataCell">18</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_44">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">0</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-7 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-17 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">50.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">Given your choice, how long would you plan to continue working for the company?</td>
+											<td class="t0_dc TableDataCell">2,563</td>
+											<td class="t0_dc TableDataCell">33</td>
+											<td class="t0_dc TableDataCell">34</td>
+											<td class="t0_dc TableDataCell">32</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_47">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="33%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="35%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="32%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell cf_GreenSig">18 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-27 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-43 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">X</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">Employee Enablement</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">&nbsp;</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">63</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">20</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">17</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_50">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_HighlightRow_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
+															<td class="barchart-cell cf_HighlightRow_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
+															<td class="barchart-cell cf_HighlightRow_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="17%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">-1</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-5 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-10 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">42.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">Conditions in my job allow me to be about as productive as I can be</td>
+											<td class="t0_dc TableDataCell">2,677</td>
+											<td class="t0_dc TableDataCell">63</td>
+											<td class="t0_dc TableDataCell">20</td>
+											<td class="t0_dc TableDataCell">17</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_53">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="17%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">-1</td>
+											<td class="t0_dc TableDataCell">0</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-5 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">43.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">There are no significant barriers at work to doing my job well</td>
+											<td class="t0_dc TableDataCell">2,694</td>
+											<td class="t0_dc TableDataCell">63</td>
+											<td class="t0_dc TableDataCell">21</td>
+											<td class="t0_dc TableDataCell">16</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_56">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="21%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="16%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">-1</td>
+											<td class="t0_dc TableDataCell cf_GreenSig">4 *</td>
+											<td class="t0_dc TableDataCell">1</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">44.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">My job provides opportunities to do challenging and interesting work</td>
+											<td class="t0_dc TableDataCell">2,691</td>
+											<td class="t0_dc TableDataCell">64</td>
+											<td class="t0_dc TableDataCell">20</td>
+											<td class="t0_dc TableDataCell">16</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_59">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="64%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="16%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">0</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-11 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-19 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">45.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">My job makes good use of my skills and abilities</td>
+											<td class="t0_dc TableDataCell">2,709</td>
+											<td class="t0_dc TableDataCell">62</td>
+											<td class="t0_dc TableDataCell">19</td>
+											<td class="t0_dc TableDataCell">18</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_62">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">-1</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-12 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-17 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">X</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">Clear and Promising Direction</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">&nbsp;</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">62</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">20</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">18</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_65">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_HighlightRow_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="62%"></td>
+															<td class="barchart-cell cf_HighlightRow_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
+															<td class="barchart-cell cf_HighlightRow_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">0</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-12 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-21 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">1.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">I have a good understanding of the company's strategy and goals</td>
+											<td class="t0_dc TableDataCell">2,688</td>
+											<td class="t0_dc TableDataCell">62</td>
+											<td class="t0_dc TableDataCell">19</td>
+											<td class="t0_dc TableDataCell">19</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_68">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="62%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">1</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-15 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-24 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">2.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">I believe that the company's strategy and goals are the right ones for the company at this time</td>
+											<td class="t0_dc TableDataCell">2,686</td>
+											<td class="t0_dc TableDataCell">63</td>
+											<td class="t0_dc TableDataCell">19</td>
+											<td class="t0_dc TableDataCell">18</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_71">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">2</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-5 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-13 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">3.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">I understand the relationship between my job and the company's strategy and goals</td>
+											<td class="t0_dc TableDataCell">2,694</td>
+											<td class="t0_dc TableDataCell">62</td>
+											<td class="t0_dc TableDataCell">20</td>
+											<td class="t0_dc TableDataCell">18</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_74">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="62%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">-1</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-19 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-25 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">4.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">the company has good business prospects over the next 2-3 years</td>
+											<td class="t0_dc TableDataCell">2,669</td>
+											<td class="t0_dc TableDataCell">62</td>
+											<td class="t0_dc TableDataCell">22</td>
+											<td class="t0_dc TableDataCell">17</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_77">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="61%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="22%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="17%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">0</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-7 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-21 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">X</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">Confidence in Leaders</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">&nbsp;</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">62</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">20</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">18</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_80">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_HighlightRow_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="62%"></td>
+															<td class="barchart-cell cf_HighlightRow_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
+															<td class="barchart-cell cf_HighlightRow_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">0</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-4 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-12 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">3.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">I understand the relationship between my job and the company's strategy and goals</td>
+											<td class="t0_dc TableDataCell">2,694</td>
+											<td class="t0_dc TableDataCell">62</td>
+											<td class="t0_dc TableDataCell">20</td>
+											<td class="t0_dc TableDataCell">18</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_83">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="62%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">-1</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-19 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-25 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">5.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">the company is open and honest in communications to employees</td>
+											<td class="t0_dc TableDataCell">2,679</td>
+											<td class="t0_dc TableDataCell">61</td>
+											<td class="t0_dc TableDataCell">21</td>
+											<td class="t0_dc TableDataCell">18</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_86">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="61%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="21%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="18%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">-1</td>
+											<td class="t0_dc TableDataCell cf_GreenSig">3 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-5 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">6.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">the company is effectively managed and well-run</td>
+											<td class="t0_dc TableDataCell">2,669</td>
+											<td class="t0_dc TableDataCell">65</td>
+											<td class="t0_dc TableDataCell">19</td>
+											<td class="t0_dc TableDataCell">16</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_89">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="65%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="16%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell cf_GreenSig">5 *</td>
+											<td class="t0_dc TableDataCell cf_GreenSig">4 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-5 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">7.</td>
+											<td class="t0_dc TableDataCell cf_DataCellWideText">I have trust and confidence in the company's senior leadership team</td>
+											<td class="t0_dc TableDataCell">2,649</td>
+											<td class="t0_dc TableDataCell">61</td>
+											<td class="t0_dc TableDataCell">19</td>
+											<td class="t0_dc TableDataCell">20</td>
+											<td class="t0_dc TableDataCell cf_Barchart_PPT_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_92">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="61%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="19%"></td>
+															<td class="barchart-cell cf_Barchart_PPT_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-3 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-2 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-10 *</td>
+										</tr>
+										<tr class="t0_tr TableRow">
+											<td class="t0_rhc TableRowHeaders">X</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">Authority and Empowerment</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">&nbsp;</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">62</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">20</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow">17</td>
+											<td class="t0_dc TableDataCell cf_HighlightRow_Underscore" style="margin:0;padding:2px;height:100%" id="yui_3_8_0_1_1518682289631_95">
+												<table class="barchart" width="100%" height="18px" cellspacing="0" cellpadding="0" border="0">
+													<tbody>
+														<tr>
+															<td class="barchart-cell cf_HighlightRow_Underscore" title="% Fav" style="border-left: 1px solid black; background: rgb(141, 196, 68) none repeat scroll 0% 0%; padding: 0px;" width="63%"></td>
+															<td class="barchart-cell cf_HighlightRow_Underscore" title="% Neu" style="background: rgb(217, 219, 217) none repeat scroll 0% 0%; padding: 0px;" width="20%"></td>
+															<td class="barchart-cell cf_HighlightRow_Underscore" title="% Unfav" style="background: rgb(245, 110, 35) none repeat scroll 0% 0%; padding: 0px;" width="17%"></td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+											<td class="t0_dc TableDataCell">0</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-8 *</td>
+											<td class="t0_dc TableDataCell cf_RedSig">-17 *</td>
+										</tr>
+									</tbody>
+								</table>
+								</div>
+							</div>
+
+							<div class="widget">
+								<img src="data:image/png;base64,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"
+								/>
+							</div>
+							-->
+							<div id="widget1" class="widget">
+								<div class="widgetHeader p-2">Title</div>
+								<div class="widgetContent p-2">Some content</div>
+							</div>
+							<div id="widget2" class="widget">
+									<div class="widgetHeader p-2">Title</div>
+									<div class="widgetContent p-2">Some content</div>
+							</div>
+							<div id="widget3" class="widget">
+									<div class="widgetHeader p-2">Title</div>
+									<div class="widgetContent p-2">Somea contSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentaSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentSomea contentaaaaaaent</div>
 							</div>
 						</div>
-
-						<div class="widget col-12 border rounded mb-2 p-2">
-							<img src="data:image/png;base64,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"
-							/>
-						</div>
-						 -->
-						<div class="widget col-12 border rounded mb-2 p-2">Some content</div>
-						<div class="widget col-12 border rounded mb-2 p-2">Some content</div>
 					</div>
 
 					<!-- COPYRIGHT NOTICE -->

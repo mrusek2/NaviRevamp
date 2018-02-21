@@ -31,7 +31,7 @@
 	flex-flow: row wrap;
 	width: 100vw;
 	height: 100vh;
-	background-color: #888888;
+	background-color: #FFFFFF;
 }
 
 #logoBar{
@@ -66,26 +66,50 @@
 	flex-flow: row wrap;
 	width: 100%;
 	min-height: calc(100vh - 45px);
-	max-height: calc(100vh - 45px);
 	overflow-y: auto;
 }
 
 #content{
 	min-height: calc(100% - 105px);
+	width: 100%;
+	display: grid;
+	grid-row-gap: 10px;
+	grid-column-gap:10px;
+	overflow:auto;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(10, minmax(max-content, 50px));
+}
+
+#evenWrappererContentWrapper{
+	padding: 10px;
 }
 
 #copyright{
 	display: block;
 	width: 100%;
 	height: 65px;
-	background-color: #CCCCCC;
+	background-color: #ffffff;
 	align-self: flex-end;
+	border-top: 1px solid #9d9d9d;
 }
 
 .widget{
 	background-color: #999999;
-	border-color: #CCCCCC;
-	max-height: 80vh;
+}
+
+.widgetHeader{
+	width: 100%;
+	background: rgb(247, 247, 247);
+	border: 1px solid rgb(195, 195, 195);
+	border-bottom: 0px;
+	max-height: 40px;
+}
+
+.widgetContent{
+	width:100%;
+	height: calc(100% - 40px);
+	background-color: #FFFFFF;
+	border: 1px solid rgb(195, 195, 195);
 }
 
 .tableWrapper{
@@ -135,6 +159,11 @@
 	#contentWrapperInner{
 		max-height: calc(100vh - 78px);
 		min-height: calc(100vh - 78px);
+	}
+
+	#content{
+		grid-template-columns: repeat(10, 1fr);
+		grid-template-rows: repeat(10, 100px);
 	}
 
 }

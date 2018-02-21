@@ -1,0 +1,28 @@
+#widget1{
+	grid-row: 1/ 5;
+	grid-column: 1 /11;
+}
+#widget2{
+	grid-row: 5/ 8;
+	grid-column: 1 /11;
+}
+#widget3{
+	grid-row: 8/ 12;
+	grid-column: 1 / 11;
+}
+
+@media (min-width: 768px){
+	
+	#widget1{
+		grid-row: 1/ 6;
+		grid-column: 1 / 7;
+	}
+	#widget2{
+		grid-row: 4/ 6;
+		grid-column: 7/ 11;
+	}
+	#widget3{
+		grid-row: 1/ 4;
+		grid-column: 7/ 11;
+	}
+}
