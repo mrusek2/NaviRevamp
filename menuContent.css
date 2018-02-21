@@ -1,1 +1,10 @@
 /* Menu styling goes here */
+#kflogo{
+	height: 77px;
+	width: 100%;
+	display: inline-block;
+	background: url('res/KFLogo.png'), rgb(0, 95, 75);
+	background-repeat: no-repeat;
+	background-size: 253px 77px;
+	background-position: center;
+}
