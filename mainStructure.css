@@ -55,9 +55,9 @@
 #menuButton span{
 	margin-left: 2px;
 	width:30px;
-	margin-top: 4px; 
+	margin-top: 4px;
 	background-color:#005f4b;
-	display: block; 
+	display: block;
 	min-height:2px;
 }
 
@@ -76,8 +76,6 @@
 	grid-row-gap: 10px;
 	grid-column-gap:10px;
 	overflow:auto;
-	grid-template-columns: repeat(10, 1fr);
-	grid-template-rows: repeat(10, minmax(max-content, 50px));
 }
 
 #evenWrappererContentWrapper{
@@ -164,10 +162,4 @@
 		max-height: calc(100vh - 78px);
 		min-height: calc(100vh - 78px);
 	}
-
-	#content{
-		grid-template-columns: repeat(10, 1fr);
-		grid-template-rows: repeat(10, 100px);
-	}
-
 }
