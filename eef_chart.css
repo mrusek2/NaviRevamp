@@ -1,0 +1,58 @@
+rect#rect0{
+fill:white;
+}
+
+rect#header{
+fill:white;
+}
+
+rect#rect1{
+fill:#48c1ca;
+/* fill-opacity:0.7; */
+}
+
+rect#rect2{
+fill:#95c852;
+/* fill-opacity:0.8; */
+}
+
+rect#rect3{
+fill:#da4350;
+/* fill-opacity:0.7; */
+}
+
+rect#rect4{
+fill:#fa9b3d;
+/* fill-opacity:0.7; */
+}
+
+.widget#eefCharts{
+/* background-color:white; */
+}
+
+.label0{
+	fill: #505050;
+	font-size: 11px;
+	text-anchor:middle;
+	font-weight: bold;
+	letter-spacing: 1px;
+	max-width:150px;
+	text-transform: uppercase;
+	overflow:hidden;
+	text-overflow: ellipsis;
+}
+
+.labels{
+	fill: white;
+	font-size: 10px;
+	text-anchor:middle;
+}
+
+.pct{
+	fill: black;
+	font-size: 20px;
+	opacity: 0.5;
+
+	/* font-weight: bold; */
+	text-anchor:middle;
+}
