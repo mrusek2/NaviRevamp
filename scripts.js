@@ -98,14 +98,70 @@ function GetFilters(){
 		return allFilters
 	}
 
+	//FUNCTIONS handling filters
+	function filtersDontApply(){
+		for(let i = 0; i<selectedFilters.length ; i++){
+			if(selectedFilters[i].removed){
+				let item = document.getElementById("fmenu-"+selectedFilters[i].filter.id + "-" + selectedFilters[i].cut.id)
+				item.className = "filterCut active";
+				let activeCut = document.createElement("div")
+				activeCut.className="activeCut";
+				activeCut.id = selectedFilters[i].filter.id + "-" + selectedFilters[i].cut.id
+				filtersFooter.append(activeCut)
+				activeCut.append(selectedFilters[i].cut.name)
+			}
+			else{
+				let activeCut = document.getElementById(selectedFilters[i].filter.id + "-" + selectedFilters[i].cut.id)
+				let acut = document.getElementById("fmenu-" + selectedFilters[i].filter.id + "-" + selectedFilters[i].cut.id)
+				acut.className = "filterCut"
+				activeCut.parentNode.removeChild(activeCut);
+			}
+		}
+	}
+	//manages selected filters Array so there arent duplicates
+	function addSelectedFilter(filter,cut,removed){
+		for (let i = 0; i < selectedFilters.length; i++) {
+			if(selectedFilters[i].filter === filter && selectedFilters[i].cut === cut){
+				selectedFilters[i].removed = removed;
+				return;
+			}
+		}
+		selectedFilters.push({"filter":filter , "cut":cut , "removed":removed});
+	}
+	function filtersApply(){
+		for(let i = 0; i<selectedFilters.length ; i++){
+			if(selectedFilters[i].removed){
+				removeFilter(selectedFilters[i].filter , selectedFilters[i].cut)
+			}
+			else{
+				addFilter(selectedFilters[i].filter , selectedFilters[i].cut)
+			}
+		}
+		selectedFilters = [];
+	}
+	//takse 1 filter cut and adds it to enabled filters
+	function addFilter(filter,cut){
+		filter.clickCut(cut.id)
+		enabledFilters.push({"filter":filter , "cut":cut});
+	}
+	//takes 1 filter cut and removes it from enabled filters
+	function removeFilter(filter,cut){
+		for(let i = 0;i<enabledFilters.length;i++){
+			if(enabledFilters[i].filter === filter , enabledFilters[i].cut === cut){
+				enabledFilters[i].filter.clickCut(enabledFilters[i].cut.id)
+				enabledFilters.splice(i,1);
+			}
+		}
+	}
+
+
 	//generates filters
 	function generateFilters(filters){
-		let enabled = [];
 		//Find the Filters block.
 		let filtersMenu = document.getElementById('filtersCategories')
 		let filtersSelection = document.getElementById('filtersSelection')
 		let filtersFooter = document.getElementById('filtersFooter')
-
+		let enabled = []
 		//generating blocks with DEMOS and FILTERS
 		let i = 0;
 		for(let filter of filters){
@@ -160,7 +216,7 @@ function GetFilters(){
 							activeCut.addEventListener("click",(e)=>{
 								let rcut = e.target;
 								let acut = document.getElementById("fmenu-" + e.target.id)
-								filter.clickCut(cut.id);
+								addSelectedFilter(filter,cut,true);
 								acut.className = "filterCut";
 								rcut.parentNode.removeChild(rcut)
 							})
@@ -174,16 +230,17 @@ function GetFilters(){
 
 						//adding event listener for clickCut FUNCTION
 						item.addEventListener("click" , ()=>{
-							filter.clickCut(cut.id);
 							//togle active filter and remove activeCut from the footer
 							if(item.className.includes("active")){
 								item.className = "filterCut";
+								addSelectedFilter(filter,cut,true);
 								let activeCut = document.getElementById(filter.id + "-" + cut.id)
 								activeCut.parentNode.removeChild(activeCut);
 							}
 							else{
+								addSelectedFilter(filter,cut,false);
 								item.className += " active";
-								//add activeCut fo footer
+								//add activeCut for footer
 								let activeCut = document.createElement("div")
 								activeCut.className="activeCut";
 								activeCut.id = filter.id + "-" + cut.id
@@ -194,7 +251,7 @@ function GetFilters(){
 								activeCut.addEventListener("click",(e)=>{
 									let rcut = e.target;
 									let acut = document.getElementById("fmenu-" + e.target.id)
-									filter.clickCut(cut.id);
+									addSelectedFilter(filter,cut,true);
 									acut.className = "filterCut";
 									rcut.parentNode.removeChild(rcut)
 								})
@@ -212,6 +269,9 @@ function GetFilters(){
 
 			submit.addEventListener("click",()=>{
 				toggleFilters();
+				console.log(selectedFilters)
+				filtersApply();
+				console.log(enabledFilters)
 			})
 
 			return enabled
@@ -226,7 +286,10 @@ function GetEEFDetails(){
 		];
 		return cuts
 }
-
+//tracks which filters were selected from opening filters window
+var selectedFilters = [];
+//tracks which filters are currently applied
+var enabledFilters = []
 window.onload = ()=>{
 	//Add an event listener on show/hide menu button
 	document.getElementById('menuButton').addEventListener('click', toggleMenuBar)
@@ -236,6 +299,8 @@ window.onload = ()=>{
 	document.getElementById('filtersModal').addEventListener('click', (event)=>{
 		let modal = document.getElementById("filtersModal")
 		if (event.target === modal) {
+				filtersDontApply();
+				selectedFilters = [];
 				toggleFilters();
 		}
 	})
@@ -252,13 +317,14 @@ window.onload = ()=>{
 
 	//Example GetFilters() usage:
 	//Get filters
-	let filters = GetFilters()
+	var filters = GetFilters()
 	//Set up some divs with them, etc. with event handlers
-	var enabledFilters = generateFilters(filters)
+	enabledFilters = generateFilters(filters)
+	//click the filters that are already enabled
 	for (let i = 0 ; i<enabledFilters.length;i++){
 		enabledFilters[i].filter.clickCut(enabledFilters[i].cut.id)
 	}
-	var selectedFilters = [];
+	console.log(enabledFilters)
 
 	//Click the cuts (you want to use this callback when user clicks the buttons)
 	/*filters[0].clickCut('420')
