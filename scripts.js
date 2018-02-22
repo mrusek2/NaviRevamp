@@ -104,7 +104,7 @@ function drawChart (cut, index){
 	svg.setAttributeNS(null, 'id', 'mySVG'+index);
 	svg.setAttributeNS(null, 'height', 2*size+3*margin+2*headerHeight);
 	svg.setAttributeNS(null, 'width', 2*size+3*margin+headerHeight);
-	document.getElementById("eefCharts").appendChild(svg)
+	document.querySelector("#eefCharts > .widgetContent").appendChild(svg)
 
 	//document.getElementById("eefCharts").
 

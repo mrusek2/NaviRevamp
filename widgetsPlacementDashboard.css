@@ -16,6 +16,11 @@
 	grid-column: 9/10;
 }
 
+#eefCharts{
+	grid-row: 15/20;
+	grid-column: 1/10;
+}
+
 #content{
 	grid-template-columns: repeat(10, 1fr);
 	grid-template-rows: repeat(20, 100px);
@@ -38,6 +43,11 @@
 	#widget4{
 		grid-row: 1/6;
 		grid-column: 8/9;
+	}
+
+	#eefCharts{
+		grid-row: 5/10;
+		grid-column: 3/8;
 	}
 
 	#content{
@@ -75,7 +85,7 @@
 		margin-right: 0px;
 	}
 	#TopDimensions{
-		margin-left: 35px;
+		margin-left: 0px;
 		margin-right: 0px;
 		height: 80%;
 	}
