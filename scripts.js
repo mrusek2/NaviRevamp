@@ -161,16 +161,25 @@ function GetFilters(){
 		let filtersMenu = document.getElementById('filtersCategories')
 		let filtersSelection = document.getElementById('filtersSelection')
 		let filtersFooter = document.getElementById('filtersFooter')
+		let filtersHeading = document.getElementById('filterHeading')
 		let enabled = []
 		//generating blocks with DEMOS and FILTERS
 		let i = 0;
 		for(let filter of filters){
 					//Generating a name of the DEMO for the menu
 					let filterName = document.createElement('div')
-					filterName.className = "filterName"
+					if(i == 0){
+						filterName.className = "filterName FNactive"
+						filtersHeading.append(filter.name)
+					}
+					else{
+						filterName.className = "filterName"
+					}
 					filterName.id="fname-"+i;
 					filtersMenu.append(filterName)
 					filterName.append(filter.name)
+
+					
 
 					//Generating a block in which FILTERS will be!
 					let filterList = document.createElement('div')
@@ -185,7 +194,6 @@ function GetFilters(){
 					//Adding event listener for filter menu items so they show correct groups
 					filterName.addEventListener("click",(e)=>{
 						let id = event.target.id.replace(/fname-/, '');
-						event.target.style.background= ""
 						let ch = filtersSelection.children;
 						for (j = 0; j < ch.length; j++) {
 								if(j==id){
@@ -193,6 +201,16 @@ function GetFilters(){
 								}
 								else{
 									ch[j].className = "hiddenList";
+								}
+				    }
+						ch = filtersMenu.children;
+						for (j = 0; j < ch.length; j++) {
+								if(j==id){
+									ch[j].className = "filterName FNactive";
+									filtersHeading.innerHTML = ch[j].innerHTML;
+								}
+								else{
+									ch[j].className = "filterName";
 								}
 				    }
 					})

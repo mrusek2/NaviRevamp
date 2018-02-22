@@ -101,29 +101,36 @@
 	background:white;
 	width:50vw;
 	height:50vh;
-	padding:1vh 1vw;
-	border-radius: 8px;
+	border-radius: 3px;
+}
+#filtersHeader{
+	height:5vh;
+	width:50vw;
+	border-bottom: 1px solid #e4e4e4;
+	font-size: 150%;
 }
 #filtersCategories{
 	float:left;
-	height:40vh;
+	height:37vh;
+	background:rgb(235, 246, 252);
+	border-right:1px solid #bcd0dc;
 	overflow-y: auto;
-	width:10vw;
-	background:blue;
+	width:20%;
 }
 #filtersSelection{
 	float:left;
-	background:red;
-	width:38vw;
-	height:40vh;
+	width:80%;
+	height:37vh;
 	overflow-y: auto;
 }
 #filtersFooter{
-	width:48vw;
+	width:50vw;
 	height:8vh;
-	background:green;
 	clear: both;
 	overflow-y: auto;
+	background: #f0f0f0;
+  border-radius: 0 0 3px 3px;
+  border-top: 1px solid #e4e4e4;
 }
 
 #filtersButton{
@@ -140,11 +147,20 @@
 	margin-right:0.5vw;
 	margin-top:2vh;
 	padding:5px 10px;
-	background:blue;
+	background-color:#20648b;
 	color:white;
 	cursor:pointer;
 	border-radius:8px;
 
+}
+
+.filterName{
+	border-top:1px solid #bcd0dc;
+	cursor:pointer;
+	background:;
+	width:100%;
+	padding:4px 1%;
+	padding-left:3%;
 }
 
 .filterList{
@@ -152,7 +168,6 @@
 	border-radius: 8px;
 	border:1px solid black;
 	cursor:pointer;
-	Background:red;
   display: inline-block;
 }
 .visibleList{
@@ -164,10 +179,11 @@
 
 .activeCut{
 	float:left;
-	background:lightblue;
+	background:#777777;
 	padding:2px 5px;
 	border-radius: 2px;
 	color:white;
+	font-size: 75%;
 	margin-left:3px;
 	margin-top :3px;
 }
@@ -175,17 +191,24 @@
 
 .filterCut{
 	float:left;
-	Background:red;
 	padding:10px 1%;
-	width:48%;
+	margin:1%;
+	width:46%;
+	cursor:pointer;
+	border-radius: 4px;
 }
 
 .filterCut:hover{
-	background:yellow;
+	background:#F0F0F0;
 }
 
 .active{
-	background:orange;
+	box-shadow: 0px 0px 2px 2px lightblue;
+
+}
+.FNactive{
+	background:#20648b;
+	color:white;
 }
 
 /*Filters END*/
