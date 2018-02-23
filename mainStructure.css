@@ -99,38 +99,44 @@
 	left:24vw;
 	z-index:25;
 	background:white;
-	width:50vw;
-	height:50vh;
+	min-height: 600px;
+  width: 760px;
 	border-radius: 3px;
+}
+#filters::before{
+	content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 #filtersHeader{
 	height:5vh;
-	width:50vw;
+	width:100%;
 	border-bottom: 1px solid #e4e4e4;
 	font-size: 150%;
+	padding-left:5px;
 }
 #filtersCategories{
 	float:left;
-	height:37vh;
+	height:469px;
 	background:rgb(235, 246, 252);
 	border-right:1px solid #bcd0dc;
 	overflow-y: auto;
-	width:20%;
+	width:30%;
 }
 #filtersSelection{
 	float:left;
-	width:80%;
-	height:37vh;
+	width:70%;
+	padding:20px;
+	height:469px;
 	overflow-y: auto;
 }
 #filtersFooter{
-	width:50vw;
-	height:8vh;
+	width:100%;
+	min-height:45px;
 	clear: both;
-	overflow-y: auto;
 	background: #f0f0f0;
   border-radius: 0 0 3px 3px;
-  border-top: 1px solid #e4e4e4;
 }
 
 #filtersButton{
@@ -142,25 +148,51 @@
 	float:right;
 }
 
+#activeFilters{
+	float:left;
+	background: #f0f0f0;
+	width: 100%;
+	padding:20px;
+	padding-bottom: 10px;
+  border-top: 1px solid #e4e4e4;
+}
+#filtersSubmit{
+	clear:both;
+	width:100%;
+}
+
 .filtersSubmit{
 	float:right;
-	margin-right:0.5vw;
-	margin-top:2vh;
 	padding:5px 10px;
 	background-color:#20648b;
+	box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.3);
 	color:white;
+	width:100px;
+	margin-right:20px;
+	text-align: center;
 	cursor:pointer;
 	border-radius:8px;
-
+}
+.filtersClose{
+	float:right;
+	padding:5px 10px;
+	background-color:#FFFFFF;
+	border: 1px solid #adadad;
+	box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.07);
+	color:#333333;
+	width:100px;
+	margin-right:20px;
+	text-align: center;
+	cursor:pointer;
+	border-radius:8px;
 }
 
 .filterName{
 	border-top:1px solid #bcd0dc;
 	cursor:pointer;
-	background:;
 	width:100%;
-	padding:4px 1%;
-	padding-left:3%;
+	padding:12px 20px;
+	font-size:13px;
 }
 
 .filterList{
@@ -191,21 +223,43 @@
 
 .filterCut{
 	float:left;
-	padding:10px 1%;
-	margin:1%;
-	width:46%;
+	padding: 2px 0;
+	margin:2px;
+	width:48%;
 	cursor:pointer;
-	border-radius: 4px;
+	border-radius: 3px;
+	font-size:13px;
 }
 
 .filterCut:hover{
-	background:#F0F0F0;
+	background:#f0F0F0;
 }
 
-.active{
-	box-shadow: 0px 0px 2px 2px lightblue;
+.filterCutBox{
+	display:inline-block;
+	margin-right: 5px;
+	margin-left: 3px;
+	width:17px;
+	height:17px;
+	border-radius: 3px;
+	border:1px solid lightgrey;
+	position:relative;
+	top:3px;
+}
+
+.active .filterCutBox{
+}
+.active .filterCutBox:after{
+	content:"\2713";
+	position:absolute;
+	font-weight: bolder;
+	bottom:-2px;
+	left:2px;
 
 }
+
+.active{}
+
 .FNactive{
 	background:#20648b;
 	color:white;

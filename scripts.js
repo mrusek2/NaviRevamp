@@ -102,13 +102,17 @@ function GetFilters(){
 	function filtersDontApply(){
 		for(let i = 0; i<selectedFilters.length ; i++){
 			if(selectedFilters[i].removed){
+				let filtersFooter = document.getElementById('activeFilters')
 				let item = document.getElementById("fmenu-"+selectedFilters[i].filter.id + "-" + selectedFilters[i].cut.id)
 				item.className = "filterCut active";
 				let activeCut = document.createElement("div")
+				let cross = document.createElement("b")
+				cross.append(" "+String.fromCharCode(9747));
 				activeCut.className="activeCut";
 				activeCut.id = selectedFilters[i].filter.id + "-" + selectedFilters[i].cut.id
 				filtersFooter.append(activeCut)
 				activeCut.append(selectedFilters[i].cut.name)
+				activeCut.append(cross);
 			}
 			else{
 				let activeCut = document.getElementById(selectedFilters[i].filter.id + "-" + selectedFilters[i].cut.id)
@@ -160,7 +164,7 @@ function GetFilters(){
 		//Find the Filters block.
 		let filtersMenu = document.getElementById('filtersCategories')
 		let filtersSelection = document.getElementById('filtersSelection')
-		let filtersFooter = document.getElementById('filtersFooter')
+		let filtersFooter = document.getElementById('activeFilters')
 		let filtersHeading = document.getElementById('filterHeading')
 		let enabled = []
 		//generating blocks with DEMOS and FILTERS
@@ -179,7 +183,7 @@ function GetFilters(){
 					filtersMenu.append(filterName)
 					filterName.append(filter.name)
 
-					
+
 
 					//Generating a block in which FILTERS will be!
 					let filterList = document.createElement('div')
@@ -218,6 +222,8 @@ function GetFilters(){
 					//adding FILTERS to filterList
 					for(let cut of filter.cuts){
 						let item = document.createElement('div');
+						let itemChkBox = document.createElement('span');
+						itemChkBox.className = "filterCutBox";
 						//unique ID
 						item.id = "fmenu-" + filter.id + "-" + cut.id
 						//if the Filter is already enabled generate a active cut in a footer
@@ -226,10 +232,13 @@ function GetFilters(){
 							item.className = "filterCut active";
 							enabled.push({"filter":filter , "cut":cut});
 							let activeCut = document.createElement("div")
+							let cross = document.createElement("b")
+							cross.append(" "+String.fromCharCode(9747));
 							activeCut.className="activeCut";
 							activeCut.id = filter.id + "-" + cut.id
 							filtersFooter.append(activeCut)
 							activeCut.append(cut.name)
+							activeCut.append(cross)
 
 							activeCut.addEventListener("click",(e)=>{
 								let rcut = e.target;
@@ -244,6 +253,7 @@ function GetFilters(){
 							item.className = "filterCut";
 						}
 						filterList.append(item);
+						item.append(itemChkBox);
 						item.append(cut.name)
 
 						//adding event listener for clickCut FUNCTION
@@ -260,10 +270,14 @@ function GetFilters(){
 								item.className += " active";
 								//add activeCut for footer
 								let activeCut = document.createElement("div")
+								let cross = document.createElement("b")
+								cross.append(" "+String.fromCharCode(9747));
 								activeCut.className="activeCut";
 								activeCut.id = filter.id + "-" + cut.id
 								filtersFooter.append(activeCut)
+
 								activeCut.append(cut.name)
+								activeCut.append(cross)
 
 								//add event listener for toggling filters throught footer's activeCuts
 								activeCut.addEventListener("click",(e)=>{
@@ -281,9 +295,18 @@ function GetFilters(){
 			}
 
 			let submit = document.createElement("div");
+			let close= document.createElement("div");
+			close.className = "filtersClose"
 			submit.className = "filtersSubmit"
-			filtersFooter.append(submit);
+			document.getElementById("filtersSubmit").append(submit);
+			document.getElementById("filtersSubmit").append(close);
 			submit.append("Apply")
+			close.append("close")
+
+			close.addEventListener("click" , ()=>{
+				toggleFilters();
+				filtersDontApply();
+			})
 
 			submit.addEventListener("click",()=>{
 				toggleFilters();
